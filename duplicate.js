@@ -1,16 +1,18 @@
-function duplicateDetector(arr, start = 0){
-    if (start >= arr.length)
-        return NaN;
-    
-    const currentElement = arr[start];
-
-    for (let i = currentElement + 1; i < arr.length; i++){
-        if (currentElement === arr[i])
-            console.log(currentElement);
+function duplicateDetector(arr){
+    let occurence = {}
+    for (let i = 0; i < arr.length; i++){
+        if (occurence[arr[i]]){
+            if (occurence[arr[i]] <= 1)
+                occurence[arr[i]]++
+            if(occurence[arr[i]] == 2){
+                console.log(arr[i])
+                occurence[arr[i]]++
+            }    
+        }
+        occurence[arr[i]] = 1
     }
-
-    return duplicateDetector(arr, currentElement + 1)
+    return null
 }
 
-const arr = [1, 1, 2, 2, 3, 4, 5];
+const arr = [1, 1, 2, 20, 3, 4, 5];
 console.log(duplicateDetector(arr));
