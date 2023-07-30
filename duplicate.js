@@ -15,4 +15,4 @@ function duplicateDetector(arr){
 }
 
 const arr = [1, 1, 2, 20, 3, 4, 5];
-console.log(duplicateDetector(arr));
+duplicateDetector(arr);
