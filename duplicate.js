@@ -1,4 +1,4 @@
-function duplicateDetector(arr){
+const duplicateDetector = (arr) => {
     let occurence = {}
     for (let i = 0; i < arr.length; i++){
         if (occurence[arr[i]]){
@@ -14,5 +14,4 @@ function duplicateDetector(arr){
     return null
 }
 
-const arr = [1, 1, 2, 20, 3, 4, 5];
-duplicateDetector(arr);
+console.log(duplicateDetector([1, 1, 2, 20, 3, 4, 5]));
