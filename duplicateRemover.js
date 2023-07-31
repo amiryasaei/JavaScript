@@ -1,15 +1,12 @@
-function duplicateRemover(arr){
-    let currentIndex = arr[arr.length-1];
-    for (let i = arr.length - 1; i >= 0; i--){
-        console.log()
-        if (currentIndex === arr[i]){
-            console.log(arr[i])
-            arr.pop()
-            console.log(arr)
-            return(duplicateRemover(arr))
+const duplicateRemover = (arr) => {
+    for (let i = 0; i < arr.length; i++){
+        for(let j = i+1; j < arr.length; j++){
+            if (arr[j] === arr[i]){
+                arr.splice(j, 1);
+                arr = duplicateRemover(arr)
+            }
         }
     }
-    console.log(arr)
+    return arr
 }
-const arr = [1,1,1,2,3,4,2,5,2]
-console.log(duplicateRemover(arr))
+console.log(duplicateRemover([1,1,1,2,3,4,3,2,5,2]))
